@@ -18,7 +18,7 @@ GenerateProjects.prototype.toHtml = function () {
   $newProject.find('.publish-date').html('Publication date: ' + this.publishedOn);
 
   $('article').removeClass('template');
-
+  console.log('1');
   return $newProject;
 };
 
@@ -27,5 +27,5 @@ projects.forEach(function(ele) {
 });
 
 projectsArray.forEach(function(a) {
-  $('#projectArticles').append(a.toHtml());
+  $('#project-articles').append(a.toHtml());
 });
