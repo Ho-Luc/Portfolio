@@ -1,0 +1,7 @@
+var projectView = [];
+
+projectView.populateFilters = function() {
+  $('article').each(function(){
+    if (!$(this)hasClass)
+  });
+}

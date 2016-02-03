@@ -27,5 +27,5 @@ projects.forEach(function(ele) {
 });
 
 projectsArray.forEach(function(a) {
-  $('#projectArticles').append(a.toHtml());
+  $('#project-articles').append(a.toHtml());
 });
