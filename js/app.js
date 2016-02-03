@@ -18,7 +18,7 @@ GenerateProjects.prototype.toHtml = function () {
   $newProject.find('.publish-date').html('Publication date: ' + this.publishedOn);
 
   $('article').removeClass('template');
-
+  console.log('1');
   return $newProject;
 };
 

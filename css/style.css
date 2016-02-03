@@ -1,7 +1,15 @@
-/*nav {
-  display: flex;
-  flex-direction: row;
-}*/
+nav {
+  display: inline-flex;
+}
 li {
   list-style-type: none;
+}
+.site-header {
+  background-color: #9393b9;
+}
+.tab-content {
+   background-color: #9393b9;
+}
+body {
+  background-color: #e0e0eb;
 }
