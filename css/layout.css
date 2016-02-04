@@ -1,0 +1,15 @@
+ #project-articles {
+   display: inline;
+ }
+
+.profile-pic {
+  height: 100%;
+}
+.site-header {
+  display: flex;
+  justify-content: center;
+}
+
+.icon-menu {
+  float: right;
+}
