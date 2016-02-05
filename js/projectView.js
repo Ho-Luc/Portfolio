@@ -1,7 +1,6 @@
 var projectView = [];
 
 projectView.handleMainNav = function () {
-  $('#project-articles').hide();
   $('#about').hide();
   $('.main-nav').on('click', '.tab', function (){
     var $contentContainer = $('main > section');
@@ -14,4 +13,5 @@ projectView.handleMainNav = function () {
     });
   });
 };
+
 projectView.handleMainNav();
