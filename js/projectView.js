@@ -1,4 +1,4 @@
-var projectView = [];
+var projectView = {};
 
 projectView.handleMainNav = function () {
   $('#about').hide();
