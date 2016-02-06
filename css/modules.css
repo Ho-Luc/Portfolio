@@ -3,19 +3,13 @@
 }
 
 .main-nav ul {
-  display: flex;
-  justify-content: center;
-  /*flex-direction: column;*/
-  /*display: inline;*/
-  /*list-style: none;*/
   display: none;
 }
 .main-nav:hover ul {
   display: block;
 }
-.main-nav li {
-  display: inline;
-  padding-right: 10%;
+.main-nav:hover li {
+  background-color: #9393b9;
 }
 .icon-menu {
 font-size: 2.5em;
@@ -29,7 +23,7 @@ font-size: 2.5em;
     display: block;
   }
   .main-nav li {
-    display: inline:
+    display: inline;
     padding: 10px;
   }
 }

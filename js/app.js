@@ -9,18 +9,16 @@ function GenerateProjects(opts) {
 }
 
 GenerateProjects.prototype.toHtml = function () {
-  var $newProject = $('article.template').clone();
+  var template = Handlebars.compile($('#project-template').text());
 
-  $newProject.find('header > h1').html(this.title);
-  $newProject.find('.site-url').html('<a href="' + this.url + '">' + 'Site Deployment' + '</a>');
-  $newProject.find('.repo-url').html('<a href="' + this.repoUrl + '">' + 'Project Repo' + '</a>');
-  $newProject.find('.project-body').html(this.body);
-  $newProject.find('.publish-date').html('Publication date: ' + this.publishedOn);
-
-  $('article').removeClass('template');
-  console.log('1');
-  return $newProject;
+  this.daysAgo = parseInt((new Date() - new Date(this.publishedOn))/60/60/24/1000);
+  this.publishStatus = this.publishedOn ? 'Published ' + this.daysAgo + ' days ago' : '(draft)';
+  return template(this);
 };
+
+projects.sort(function(a,b) {
+  return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
+});
 
 projects.forEach(function(ele) {
   projectsArray.push(new GenerateProjects(ele));
