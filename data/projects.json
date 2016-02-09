@@ -12,5 +12,5 @@
     "repoUrl": "http://github.com/heyduckd/equip/tree/master",
     "publishedOn": "2016-1-28",
     "body": "<p>This project was a team project of 4 students. Our goal with the project was to create pack lists for the experienced/inexperienced for outdoor activities. Then our web app would then send the user to a resource page, where they could find some of those outdoor products. Finally after the user goes on the trip, they can save their experience of the trip in the list tab, by entering in information about their trip.</p>"
-  },
+  }
 ]
