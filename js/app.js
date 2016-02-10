@@ -1,5 +1,3 @@
-var projectsArray = [];
-
 function GenerateProjects(opts) {
   this.title = opts.title;
   this.url = opts.url;
@@ -7,6 +5,8 @@ function GenerateProjects(opts) {
   this.publishedOn = opts.publishedOn;
   this.body = opts.body;
 }
+
+GenerateProjects.all = [];
 
 GenerateProjects.prototype.toHtml = function () {
   var template = Handlebars.compile($('#project-template').text());
@@ -16,14 +16,48 @@ GenerateProjects.prototype.toHtml = function () {
   return template(this);
 };
 
-projects.sort(function(a,b) {
-  return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
-});
+GenerateProjects.loadAll = function(rawData) {
+  rawData.sort(function(a,b) {
+    return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
+  });
+  rawData.forEach(function(ele) {
+    GenerateProjects.all.push(new GenerateProjects(ele));
+  });
+};
 
-projects.forEach(function(ele) {
-  projectsArray.push(new GenerateProjects(ele));
-});
-
-projectsArray.forEach(function(a) {
-  $('#project-articles').append(a.toHtml());
-});
+GenerateProjects.fetchAll = function() {
+  if(localStorage.rawData) {
+    $.ajax({
+      type: 'HEAD',
+      url: 'data/projects.json',
+      success: function(data, message, xhr) {
+        var eTag = xhr.getResponseHeader('eTag');
+        if (!localStorage.eTag || eTag !== localStorage.eTag) {
+          localStorage.eTag = eTag;
+        } else {
+          GenerateProjects.loadAll(JSON.parse(localStorage.rawData));
+          projectView.initIndexPage();
+        }
+      }
+    });
+  } else {
+    $.getJSON('data/projects.json', function(data) {
+      localStorage.setItem('rawData', JSON.stringify(data));
+    });
+    $.ajax({
+      type: 'HEAD',
+      url: 'data/projects.json',
+      success: function(data, message, xhr) {
+        var eTag = xhr.getResponseHeader('eTag');
+        if (!localStorage.eTag || eTag !== localStorage.eTag) {
+          localStorage.eTag = eTag;
+        } else {
+          GenerateProjects.loadAll(JSON.parse(localStorage.rawData));
+          projectView.initIndexPage();
+        }
+      }
+    });
+    GenerateProjects.loadAll(JSON.parse(localStorage.rawData));
+    projectView.initIndexPage();
+  }
+};

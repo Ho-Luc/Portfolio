@@ -14,4 +14,9 @@ projectView.handleMainNav = function () {
   });
 };
 
-projectView.handleMainNav();
+projectView.initIndexPage = function() {
+  GenerateProjects.all.forEach(function(a) {
+    $('#project-articles').append(a.toHtml());
+  });
+  projectView.handleMainNav();
+};
