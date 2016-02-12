@@ -1,7 +1,6 @@
-.site-header {
-  background-color: #9393b9;
-}
+/*outline: dotted 1px red; are still in CSS to mark potential future changes*/
 
+/*Mobile view*/
 .main-nav ul {
   display: none;
 }
@@ -9,7 +8,7 @@
   width: 80%;
   /*outline: dotted 1px red;*/
   display: flex;
-  justify-content: center;
+  flex-direction: row;
 }
 .main-nav:hover ul {
   display: block;
@@ -20,10 +19,17 @@
 .icon-menu {
 font-size: 2.5em;
 }
+.project-body-container {
+  flex-direction: column;
+}
 
+/*Desktop view*/
 @media only screen and (min-width: 640px) {
   .icon-menu {
     display: none;
+  }
+  .project-body-container {
+    flex-direction: row;
   }
   .main-nav ul {
     display: flex;
@@ -35,13 +41,12 @@ font-size: 2.5em;
   }
   .main-nav li:hover {
     background-color: #e6ac00;
-    /*width: 90px;*/
   }
   .main-nav li {
     /*outline: dotted 1px red;*/
     display: flex;
     padding: 5px;
-    margin: 0 10px;
+    margin: 0 50px;
   }
   ul {
     padding: 0;
