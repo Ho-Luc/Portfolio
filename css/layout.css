@@ -18,3 +18,9 @@
   width: 250px;
   margin-right: 15px;
 }
+.header-text {
+  margin-top: 10px;
+}
+.project-body {
+  background-color: lavender;
+}
