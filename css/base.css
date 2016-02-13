@@ -18,6 +18,7 @@ body {
   color: #333;
 }
 a {
+  color: #666699;
   padding-right: 2%;
   font-weight: bold;
   text-decoration: none;
@@ -45,6 +46,5 @@ h4 {font-size: 1.414em;}
 small, .font_small {font-size: 0.707em;}
 
 footer {
-
   background-color: #666699;
 }
