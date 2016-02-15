@@ -1,5 +1,9 @@
 .profile-pic {
   height: 100%;
+  padding: 30px 0;
+}
+#about {
+  /*display: flex;*/
 }
 .site-header {
   background-color: #666699;

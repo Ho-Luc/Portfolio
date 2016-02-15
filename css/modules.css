@@ -22,9 +22,22 @@ font-size: 2.5em;
 .project-body-container {
   flex-direction: column;
 }
+#about {
+  flex-direction: column;
+}
 
 /*Desktop view*/
 @media only screen and (min-width: 640px) {
+  .profile-pic {
+    max-width: 65%;
+  }
+  .about-info {
+    padding-left: 20px;
+    margin-top: -30px;
+  }
+  #about {
+    flex-direction: row;
+  }
   .icon-menu {
     display: none;
   }
@@ -45,6 +58,7 @@ font-size: 2.5em;
   .main-nav li {
     /*outline: dotted 1px red;*/
     display: flex;
+    justify-content: center;
     padding: 5px;
     margin: 0 50px;
   }
