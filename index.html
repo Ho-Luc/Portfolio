@@ -1,69 +1,77 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/icons.css">
-  <link rel="stylesheet" href="css/layout.css">
-  <link rel="stylesheet" href="css/modules.css">
+  <head>
+    <title>Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/icons.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/modules.css">
 
-  <script id="project-template" type="text/x-handlebars-template">
-    <div class="project-body-container">
-      <img class="logo-img" src="{{img}}">
-      <article>
-        <header>
-          <h1>{{title}}</h1>
-          <a class="site-url" href="{{url}}">Site Deployment</a>
-          <a class="repo-url" href="{{repoUrl}}">Repository</a>
-          <h5 class="publish-date">{{publishStatus}}</h5>
+    <script id="project-template" type="text/x-handlebars-template">
+      <div class="project-body-container">
+        <img class="logo-img" src="{{img}}">
+        <article>
+          <header>
+            <h1>{{title}}</h1>
+            <a class="site-url" href="{{url}}">Site Deployment</a>
+            <a class="repo-url" href="{{repoUrl}}">Repository</a>
+            <h5 class="publish-date">{{publishStatus}}</h5>
+          </header>
+          <section class="project-body">{{{body}}}</section>
+        </article>
+      </div>
+    </script>
+  </head>
+
+  <body>
+    <header class="site-header">
+      <h1 class="header-text">Luc's Portfolio</h1>
+    </header>
+    <nav class="main-nav">
+      <div class="icon-menu"></div>
+      <ul>
+        <li class="tab" data-content="project-articles"><a href="/" class="icon-home">Projects</a></li>
+        <li class="tab" data-content="about"><a href="/about">About</a></li>
+        <li><a href="https://github.com/Ho-Luc" class="icon-github">GitHub </a></li>
+      </ul>
+    </nav>
+    <main>
+      <section id="project-articles" class="tab-content"></section>
+      <section id="about" class="tab-content">
+        <header class="profile-pic">
+          <img src="img/luc023.jpg"/>
         </header>
-        <section class="project-body">{{{body}}}</section>
-      </article>
-    </div>
-  </script>
-</head>
-
-<body>
-  <header class="site-header">
-    <h1 class="header-text">Luc's Portfolio</h1>
-  </header>
-  <nav class="main-nav">
-    <div class="icon-menu"></div>
-    <ul>
-      <li class="tab" data-content="project-articles"><a class="icon-home">Projects</a></li>
-      <li class="tab" data-content="about"><a >About</a></li>
-      <li><a href="https://github.com/Ho-Luc" class="icon-github">GitHub </a></li>
-    </ul>
-  </nav>
-  <main>
-    <section id="project-articles" class="tab-content"></section>
-    <section id="about" class="tab-content">
-      <header class="profile-pic">
-        <img src="img/luc023.jpg"/>
-      </header>
-      <section class="about-info">
-        <h2>Some Interests:</h2>
-        <ul>
-          <li>Learning</li>
-          <li>Teaching others</li>
-          <li>Competitive & cooperative types of games</li>
-        </ul>
-        <br>
-        <h2>Contact Info:</h2>
-        <ul>
-          <li>Ho.luc13@gmail.com</li>
-        </ul>
+        <section class="about-info">
+          <h2>Some Interests:</h2>
+          <ul>
+            <li>Learning</li>
+            <li>Teaching others</li>
+            <li>Competitive & cooperative types of games</li>
+          </ul>
+          <br>
+          <h2>Contact Info:</h2>
+          <ul>
+            <li>Ho.luc13@gmail.com</li>
+          </ul>
+        </section>
       </section>
-    </section>
-  </main>
+    </main>
 
-  <footer>&copy; 2016 Last Updated </footer>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
-  <script src="js/app.js"></script>
-  <script src="js/projectView.js"></script>
-  <script>GenerateProjects.fetchAll(projectView.initIndexPage)</script>
+    <footer>&copy; 2016 Last Updated </footer>
+    <!-- CDNs -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
 
-</body>
+    <script src="/vendor/scripts/page.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/projectView.js"></script>
+
+    <!-- CONTROLLERS -->
+    <script src="/js/projectController.js"></script>
+    <script src="/js/aboutController.js"></script>
+
+    <!-- ROUTES -->
+    <script src="/js/routes.js"></script>
+  </body>
 </html>

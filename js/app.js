@@ -3,13 +3,6 @@
     Object.keys(opts).forEach(function(a, idx, keys) {
       this[a] = opts[a];
     }, this);
-    //The code below, is there for studying purposes (need to ask TA's) to understand how keys work//
-    // this.title = opts.title;
-    // this.url = opts.url;
-    // this.repoUrl = opts.repoUrl;
-    // this.publishedOn = opts.publishedOn;
-    // this.body = opts.body;
-    // this.img = opts.img;
   }
 
   GenerateProjects.all = [];
