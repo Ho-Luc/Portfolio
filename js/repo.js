@@ -14,5 +14,11 @@
     }).done(next);
   };
 
+  repo.with = function(fork) {
+    return repo.all.filter(function(repo){
+      return repo[fork] === false;
+    });
+  };
+
   module.repo = repo;
 })(window);

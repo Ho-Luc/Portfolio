@@ -14,11 +14,12 @@
 
   repoView.index = function() {
     ui();
-    // console.log('inside repoView');
+
     $('#about ul:nth-of-type(3)').append(
-      repo.all.map(render)
+      repo.with('fork').map(render)
     );
   };
+
 
   module.repoView = repoView;
 })(window);

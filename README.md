@@ -6,3 +6,5 @@ As a developer:
 
 As a Creator:
 - I want my site to be linked up to my social and github pages.
+
+Credits: Used meyerweb.com for a reset stylesheet
