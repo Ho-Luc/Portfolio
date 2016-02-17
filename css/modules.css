@@ -1,12 +1,9 @@
-/*outline: dotted 1px red; are still in CSS to mark potential future changes*/
-
 /*Mobile view*/
 .main-nav ul {
   display: none;
 }
 .main-nav li {
   width: 80%;
-  /*outline: dotted 1px red;*/
   display: flex;
   flex-direction: row;
 }
@@ -14,7 +11,7 @@
   display: block;
 }
 .main-nav li:hover {
-  background-color: #e6ac00;
+  background-color: #b3b3cc;
 }
 .icon-menu {
 font-size: 2.5em;
@@ -53,10 +50,10 @@ font-size: 2.5em;
     display: flex;
   }
   .main-nav li:hover {
-    background-color: #e6ac00;
+    background-color: #b3b3cc;
   }
+
   .main-nav li {
-    /*outline: dotted 1px red;*/
     display: flex;
     justify-content: center;
     padding: 5px;
