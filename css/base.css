@@ -10,7 +10,7 @@ li {
 html {font-size: 1em;}
 
 body {
-  background-color: #e0e0eb;
+  background-image: url('../img/backdrop.jpg');
   padding: 1%;
   background-color: white;
   font-family: 'Libre Baskerville', serif;
