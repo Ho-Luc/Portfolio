@@ -5,8 +5,7 @@
   repo.requestRepo = function(next) {
     $.get('https://api.github.com/users/Ho-Luc/repos', function(data, message, xhr) {
       repo.all = data;
-    }
-  ).done(next);
+    }).done(next);
   };
 
   repo.with = function(fork) {
