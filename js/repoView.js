@@ -20,6 +20,5 @@
     );
   };
 
-
   module.repoView = repoView;
 })(window);
