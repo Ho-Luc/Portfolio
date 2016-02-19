@@ -1,8 +1,12 @@
 (function(module) {
   var projectView = {};
 
-  projectView.initIndexPage = function() {
-    GenerateProjects.all.forEach(function(a) {
+  projectView.index = function(projects) {
+    $('#project-articles').empty();
+    $('main > section').hide();
+    $('#project-articles').show();
+
+    projects.forEach(function(a) {
       $('#project-articles').append(a.toHtml());
     });
   };

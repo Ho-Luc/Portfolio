@@ -24,15 +24,14 @@
     });
   };
 
-  GenerateProjects.fetchAll = function(viewInit) {
+  GenerateProjects.fetchAll = function(next) {
     if(localStorage.rawData) {
       GenerateProjects.loadAll(JSON.parse(localStorage.rawData));
-      viewInit();
+      next();
     } else {
       $.getJSON('data/projects.json', function(rawData) {
         GenerateProjects.loadAll(rawData);
         localStorage.rawData = JSON.stringify(rawData);
-        viewInit();
       });
     }
   };

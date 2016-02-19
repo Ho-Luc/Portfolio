@@ -20,6 +20,9 @@ font-size: 2.5em;
 .project-body-container {
   flex-direction: column;
 }
+body {
+  padding: 1%;
+}
 #about {
   flex-direction: column;
 }
